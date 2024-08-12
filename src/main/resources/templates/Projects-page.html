@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home / Projects Page</title>
+</head>
+<body>
+<h1>Проекты</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Идентификатор записи</th>
+        <th>Проект</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="Project : ${Projects}">
+<!--        <td><span th:text="${Project.id}"></span></td>-->
+        <td><a th:href="@{'/home/projects/{id}'(id=${Project.id})}" th:text="${Project.id}"></a></td>
+        <td><span th:text="${Project.projectName}"></span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
